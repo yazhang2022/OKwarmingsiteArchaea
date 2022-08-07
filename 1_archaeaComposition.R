@@ -11,8 +11,6 @@ library("ieggr")
 #########################################
 # 2 # set working files
 #########################################
-setwd("/Volumes/Onetouch/Desktop/warmingsite/pure\ warming\ vs\ control/Archaea/processed.data/0-DataForSubmission/")
-
 setwd("/data/")
 otu.file="resample_otu_table.txt"
 treat.file="treatment info and env data.txt"
