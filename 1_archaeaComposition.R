@@ -11,7 +11,7 @@ library("ieggr")
 #########################################
 # 2 # set working files
 #########################################
-setwd("/data/")
+setwd("/data")
 otu.file="resample_otu_table.txt"
 treat.file="treatment info and env data.txt"
 class.file="classifier_archaea.txt"
