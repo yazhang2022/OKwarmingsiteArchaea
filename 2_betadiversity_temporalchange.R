@@ -26,7 +26,7 @@ wdm=iwd(wdm)
 treat=lazyopen(treat.file)
 
 head(treat)
-warming=as.factor(treat$Warm)
+warming=as.factor(treat$treatment)
 block=as.factor(treat$block)
 year=as.factor(treat$year)
 
