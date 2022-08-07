@@ -1,4 +1,4 @@
-Sample_name	block	plot	year	Warm	warm	Year1	NO3-N	NH4-N	TN	TC	pH	annual_moisture	temperature_annual	ER_annualmean	GPP_annualmean	NEE_annualmean	Autotrophic	Heterotrophic	total_soil_respiration
+Sample_name	block	plot	year	treatment	warm	Year1	NO3-N	NH4-N	TN	TC	pH	annual_moisture	temperature_annual	ER_annualmean	GPP_annualmean	NEE_annualmean	Autotrophic	Heterotrophic	total_soil_respiration
 X09_10S_H_C_1	B2	S10	2009	1	H	0	2.28	4.02	0.111	1.047	7.25	6.526	18.84485794	5.441832296	11.63086135	6.189029059	NA	NA	NA
 X09_16S_H_C_1	B4	S16	2009	1	H	0	1.09	3.36	0.111	1.121	6.91	7.074	20.02399943	6.041609075	9.043173883	3.001564808	NA	NA	NA
 X09_1S_H_C_1	B1	S01	2009	1	H	0	3.12	2.71	0.107	1.034	6.57	5.98	18.64462531	7.760058366	10.15046303	2.390404665	NA	NA	NA
