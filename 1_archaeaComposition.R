@@ -55,7 +55,7 @@ sample_variables(physeq)
 colr=c("darkblue", "darkgoldenrod1", "darkseagreen", "darkorchid", "darkolivegreen1", "lightskyblue", "darkgreen", "deeppink", "khaki2", "firebrick", "brown1", "darkorange1", "cyan1", "royalblue4", "darksalmon", "darkblue",
        "royalblue4", "dodgerblue3", "steelblue1", "lightskyblue", "darkseagreen", "darkgoldenrod1", "darkseagreen", "darkorchid", "darkolivegreen1", "brown1", "darkorange1", "cyan1", "darkgrey")
 
-p1=plot_bar(physeq, x="Warm", fill = "Phylum") 
+p1=plot_bar(physeq, x="treatment", fill = "Phylum") 
 d=p1$data
 head(d)
 write.csv(d,"composition.txt")
@@ -63,7 +63,7 @@ write.csv(d,"composition.txt")
 #statistical tests
 d=read.table("composition.txt", header = T, sep = "\t")
 library(dplyr)
-phylsum=d %>% group_by(Warm, Sample, Phylum) %>% summarise(Abundance = sum(Abundance))
+phylsum=d %>% group_by(treatment, Sample, Phylum) %>% summarise(Abundance = sum(Abundance))
 head(phylsum)
 
 phylsum$Phylum=as.factor(phylsum$Phylum)
@@ -74,8 +74,8 @@ colnames(mresult)=c("phylum", "W", "p-value")
 for(i in (1:length(gy.level))){
   phylsum2=phylsum[which(phylsum$Phylum == gy.level[i]), ]
   mresult[i,1]=gy.level[i]
-  mresult[i,2]=wilcox.test(Abundance ~ Warm, data=phylsum2, exact = FALSE, alternative = "greater")$statistic
-  mresult[i,3]=wilcox.test(Abundance ~ Warm, data=phylsum2, exact = FALSE, alternative = "greater")$p.value
+  mresult[i,2]=wilcox.test(Abundance ~ treatment, data=phylsum2, exact = FALSE, alternative = "greater")$statistic
+  mresult[i,3]=wilcox.test(Abundance ~ treatment, data=phylsum2, exact = FALSE, alternative = "greater")$p.value
 }
 
 write.csv(mresult, "stat.phylum.oneside.wdecrease.abund.csv")
@@ -87,7 +87,7 @@ write.csv(mresult, "stat.phylum.oneside.wdecrease.abund.csv")
 ##########abundance
 ##Phylum level
 unique(d$OTU)
-a1=ggplot(d, aes(x = Warm, y = Abundance, fill = Phylum)) +
+a1=ggplot(d, aes(x = treatment, y = Abundance, fill = Phylum)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values =colr)+
   labs(x = "Treatment", y = "Cumulative abundance (phylum level)")+
